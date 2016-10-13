@@ -16,9 +16,8 @@ var movie_search = (function($) {
     function displaySearchResults(searchResults) {
         $('#movies').empty();
 
-        var resultsArray = searchResults.Search;
-            if (searchResults.Response === "True") {
-
+        if (searchResults.Response === "True") {
+            var resultsArray = searchResults.Search;
             var resultHTML = '';
 
             for (var i = 0; i < resultsArray.length; i++) {
@@ -58,8 +57,9 @@ var movie_search = (function($) {
         }
     }
 
-    /* Search OMDb. Take tag and year as arguments.
-    Return JSON from server. */
+    /* Search OMDb. Take title and year as arguments.
+    On success, call displaySearchResults() with JSON object from
+    callback as argument. */
     function search(searchTitle, searchYear) {
         var url = 'http://www.omdbapi.com/';
         var data = {
@@ -74,7 +74,7 @@ var movie_search = (function($) {
     }
 
     /* Read the input fields.
-    Return array with values of searchTitle input and searchYear input. */
+    Return array with value of searchTitle input and searchYear input. */
     function readInputFields() {
         var searchArray = [];
         searchArray[0] = $('#search').val();
@@ -89,16 +89,10 @@ var movie_search = (function($) {
         search(searchArray[0], searchArray[1]);
     }
 
+    /* Handler for submit fields. */
     $('.search-form').submit(function(e) {
         e.preventDefault();
         performSearch();
     });
-
-    /* Expose a .search method for manually searching and displaying results. */
-    return {
-        search: function(searchTitle, searchYear) {
-            search(searchTitle, searchYear);
-        }
-    };
 
 })(jQuery);
