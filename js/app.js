@@ -15,32 +15,46 @@ var movie_search = (function($) {
     /* Display search results using JSON object as argument. */
     function displaySearchResults(searchResults) {
         $('#movies').empty();
+
         var resultsArray = searchResults.Search;
+            if (searchResults.Response === "True") {
 
-        var resultHTML = '';
+            var resultHTML = '';
 
-        for (var i = 0; i < resultsArray.length; i++) {
-            resultHTML = '';
-            resultHTML += '<li>';
-            resultHTML += '<div class="poster-wrap">';
+            for (var i = 0; i < resultsArray.length; i++) {
+                resultHTML = '';
+                resultHTML += '<li>';
+                resultHTML += '<div class="poster-wrap">';
 
-            if (resultsArray[i].Poster !== "N/A") {
-                resultHTML += '<img class="movie-poster" src="';
-                resultHTML += resultsArray[i].Poster;
-                resultHTML += '">';
-            } else {
-                resultHTML += '<i class="material-icons poster-placeholder">crop_original</i>';
+                if (resultsArray[i].Poster !== "N/A") {
+                    resultHTML += '<img class="movie-poster" src="';
+                    resultHTML += resultsArray[i].Poster;
+                    resultHTML += '">';
+                } else {
+                    resultHTML += '<i class="material-icons poster-placeholder">crop_original</i>';
+                }
+
+                resultHTML += '</div>';
+                resultHTML += '<span class="movie-title">';
+                resultHTML += resultsArray[i].Title;
+                resultHTML += '</span>';
+                resultHTML += '<span class="movie-year">';
+                resultHTML += resultsArray[i].Year;
+                resultHTML += '</span>';
+                resultHTML += '</li>';
+
+                $('#movies').append(resultHTML);
             }
-            resultHTML += '</div>';
-            resultHTML += '<span class="movie-title">';
-            resultHTML += resultsArray[i].Title;
-            resultHTML += '</span>';
-            resultHTML += '<span class="movie-year">';
-            resultHTML += resultsArray[i].Year;
-            resultHTML += '</span>';
-            resultHTML += '</li>';
-
-            $('#movies').append(resultHTML);
+        } else {
+            var noMoviesHTML = '<li class="no-movies">';
+            noMoviesHTML += '<i class="material-icons icon-help">';
+            noMoviesHTML += 'help_outline</i>No movies found that match: "';
+            noMoviesHTML += $('#search').val();
+            noMoviesHTML += '" and "';
+            noMoviesHTML += $('#year').val();
+            noMoviesHTML += '".';
+            noMoviesHTML += '</li>';
+            $('#movies').html(noMoviesHTML);
         }
     }
 
@@ -74,6 +88,11 @@ var movie_search = (function($) {
         var searchArray = readInputFields();
         search(searchArray[0], searchArray[1]);
     }
+
+    $('.search-form').submit(function(e) {
+        e.preventDefault();
+        performSearch();
+    });
 
     /* Expose a .search method for manually searching and displaying results. */
     return {
