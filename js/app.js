@@ -66,7 +66,7 @@ var movie_search = (function($) {
         var arrayIndex = idOfClicked.match(/\d+/)[0];
         var clickedObject = SEARCH_RESULTS.Search[arrayIndex];
 
-        var url = 'http://www.omdbapi.com/';
+        var url = 'https://www.omdbapi.com/';
         var data = {
             i: clickedObject.imdbID,
             plot: 'full'
@@ -101,7 +101,7 @@ var movie_search = (function($) {
     On success, assign returned JSON object to SEARCH_RESULTS and
     call displaySearchResults(). */
     function search(searchTitle, searchYear) {
-        var url = 'http://www.omdbapi.com/';
+        var url = 'https://www.omdbapi.com/';
         var data = {
             s: searchTitle,
             y: searchYear
