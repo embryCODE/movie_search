@@ -60,7 +60,7 @@
                 noMoviesHTML += '" and "';
                 noMoviesHTML += $('#year').val();
             }
-            
+
             noMoviesHTML += '".';
             noMoviesHTML += '</li>';
 
@@ -73,6 +73,8 @@
     AJAX request using clickedObject.imdbID to lookup movie by IMDB id.
     This was necessary to get IMDB rating and plot. */
     function createDescriptionPage(idOfClicked) {
+        $('.loading-desc').show();
+
         var arrayIndex = idOfClicked.match(/\d+/)[0];
         var clickedObject = SEARCH_RESULTS.Search[arrayIndex];
 
@@ -92,6 +94,8 @@
             $('.desc-movie-rating').text('IMDB Rating: ' + movie.imdbRating);
             $('.desc-plot').text(movie.Plot);
             $('.imdb-link').attr("href", 'http://www.imdb.com/title/' + movie.imdbID);
+
+            $('.loading-desc').hide();
         };
 
         $.get(url, data, buildDescriptionPage);
@@ -114,6 +118,8 @@
     On success, assign returned JSON object to SEARCH_RESULTS and
     call displaySearchResults(). */
     function search(searchTitle, searchYear) {
+        $('#submit').hide();
+        $('.loading-icon').show();
         var url = 'https://www.omdbapi.com/';
         var data = {
             s: searchTitle,
@@ -122,6 +128,8 @@
         var callback = function(data) {
             SEARCH_RESULTS = data;
             displaySearchResults();
+            $('.loading-icon').hide();
+            $('#submit').show();
         };
 
         $.get(url, data, callback);

@@ -15,7 +15,7 @@
         <div class="inner">
             <h1 class="main-title"><a href="index.html">MovieSearch</a></h1>
             <form class="search-form">
-                
+
                 <!-- Title search. -->
                 <label class="is-hidden" for="search">Search a title</label>
                 <input type="search" name="search" id="search" placeholder="Search a Title...">
@@ -23,6 +23,8 @@
                 <!-- Year search. -->
                 <label class="is-hidden" for="year">Any Year</label>
                 <input type="text" maxlength="4" name="year" id="year" placeholder="Year">
+
+                <img class="loading-icon" src="img/loading.gif" />
 
                 <!-- Submit button. -->
                 <button type="submit" id="submit" class="search-button"><i class="material-icons icn-search">search</i></button>
@@ -37,6 +39,12 @@
     </div>
 
     <div class="description-page">
+        <div class="loading-desc">
+            <p>
+                Loading description...
+                <img class="desc-loading-icon" src="img/loading.gif" />
+            </p>
+        </div>
         <div class="description-header-background clearfix">
             <div class="main-content">
                 <div class="back-to-search">

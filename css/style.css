@@ -278,6 +278,12 @@ button {
     color: inherit;
 }
 
+.loading-icon {
+    display: none;
+    position: relative;
+    top: 4px;
+}
+
 /* Fix for Safari. */
 input {
     -webkit-appearance: none;
@@ -288,6 +294,25 @@ input {
 }
 
 /* description page */
+
+.loading-desc {
+    width: 100%;
+    position: absolute;
+    top: 15px;
+    text-align: center;
+}
+
+.loading-desc p {
+    display: inline-block;
+    padding: 15px 20px;
+    background: white;
+    color: #4c4c4c;
+}
+
+.desc-loading-icon {
+    position: relative;
+    top: 2px;
+}
 
 .description-page {
     display: none;
