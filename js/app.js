@@ -1,4 +1,4 @@
-var movie_search = (function($) {
+(function($) {
 
     'use strict';
 
