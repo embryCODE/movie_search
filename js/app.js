@@ -55,8 +55,12 @@
             noMoviesHTML += '<i class="material-icons icon-help">';
             noMoviesHTML += 'help_outline</i>No movies found that match: "';
             noMoviesHTML += $('#search').val();
-            noMoviesHTML += '" and "';
-            noMoviesHTML += $('#year').val();
+
+            if ($('#year').val()) {
+                noMoviesHTML += '" and "';
+                noMoviesHTML += $('#year').val();
+            }
+            
             noMoviesHTML += '".';
             noMoviesHTML += '</li>';
 
@@ -145,7 +149,9 @@
     /* Handler for submit fields. */
     $('.search-form').submit(function(e) {
         e.preventDefault();
-        performSearch();
+        if ($('#search').val()) {
+            performSearch();
+        }
     });
 
     /* Handler for movie li's. Call createDescriptionPage(), passing in
