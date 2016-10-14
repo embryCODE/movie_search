@@ -269,18 +269,19 @@ button {
 }
 
 
-/* DESCRIPTION PAGE */
+/* ADDED STYLING */
+
+
+/* search page */
 
 #movies li:hover {
     cursor: pointer;
 }
 
-.main-content {
-    position: relative;
-    height: 200px;
-}
 
-#description-page {
+/* description page */
+
+.description-page {
     display: none;
     margin: auto;
     color: #9d9d9d;
@@ -293,8 +294,25 @@ button {
     z-index: 1000;
 }
 
-#description-header-background {
+.description-header-background {
     background-color: #4c4c4c;
+}
+
+.back-to-search {
+    padding-top: 12px;
+}
+
+.back-to-search:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+.arrow {
+    color: #fff;
+    font-size: 1.5em;
+    position: relative;
+    top: 6px;
+    left: -6px;
 }
 
 .description-container {
@@ -303,21 +321,15 @@ button {
     margin: 0;
 }
 
-#back-to-search {
-    padding-top: 12px;
+.desc-movie-name {
+    color: #fff;
+    padding: 55px 0 5px 0;
+    margin: 0;
 }
 
-#back-to-search:hover {
-    cursor: pointer;
-    color: #fff;
-}
-
-#arrow {
-    color: #fff;
-    font-size: 1.5em;
-    position: relative;
-    top: 6px;
-    left: -6px;
+.desc-movie-rating {
+    display: block;
+    padding-bottom: 30px;
 }
 
 .poster-div {
@@ -325,9 +337,8 @@ button {
     max-width: 300px;
     width: 27%;
     float: left;
-    margin-top: 25px;
     margin-left: 3%;
-    top: -140px;
+    top: -125px;
 }
 
 .desc-poster-placeholder {
@@ -336,24 +347,15 @@ button {
     font-size: 5em;
     text-align: center;
     padding-top: 100px;
-    width: 300px;
-    height: 400px;
+    border: solid #9d9d9d 10px;
+    width: 280px;
+    height: 380px;
 }
 
 .desc-poster-image {
     width: 100%;
+    min-width: 200px;
     border: solid #f6f7f7 10px;
-}
-
-#desc-movie-name {
-    color: white;
-    padding: 55px 0 5px 0;
-    margin: 0;
-}
-
-#desc-movie-rating {
-    display: block;
-    padding-bottom: 30px;
 }
 
 .desc-plot-synopsis {
@@ -362,12 +364,12 @@ button {
     margin: 20px 0 0;
 }
 
-#desc-plot {
+.desc-plot {
     padding: 10px 0 40px 0;
     margin: 0;
 }
 
-#imdb-link {
+.imdb-link {
     padding: 15px 20px;
     color: white;
     border-radius: 3px;
