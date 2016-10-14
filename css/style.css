@@ -276,12 +276,8 @@ button {
     height: 200px;
 }
 
-#movies {
-    display: none;
-}
-
 #description-page {
-    /*display: none;*/
+    display: none;
     margin: auto;
     color: #9d9d9d;
     background: #fff;
@@ -291,6 +287,11 @@ button {
     top: 80px;
     left: 0px;
     z-index: 1000;
+}
+
+#description-header-background {
+    height: 190px;
+    background-color: #4c4c4c;
 }
 
 #description-container {
@@ -308,25 +309,12 @@ button {
     color: #fff;
 }
 
-#description-header-background {
-    height: 190px;
-    background-color: #4c4c4c;
-}
-
 #arrow {
     color: #fff;
     font-size: 1.5em;
     position: relative;
     top: 6px;
     left: -6px;
-}
-
-#description-header {
-    /*display: flex;*/
-}
-
-#description-body {
-    /*display: flex;*/
 }
 
 .desc-poster-image {
