@@ -85,16 +85,17 @@ var movie_search = (function($) {
         };
 
         $.get(url, data, callback);
-        $('#description-page').toggle('slide', {
+        $('#description-page').show('slide', {
             direction: 'right'
         }, 500);
 
     }
 
     function removeDescriptionPage() {
-        $('#description-page').toggle('slide', {
+        $('#description-page').hide('slide', {
             direction: 'right'
         }, 500);
+        $('body').scrollTop(0);
     }
 
     /* Search OMDb. Take title and year as arguments.
@@ -126,6 +127,7 @@ var movie_search = (function($) {
     /* Call readInputFields and store in search array.
     Call search using data from search array. */
     function performSearch() {
+        removeDescriptionPage();
         var searchArray = readInputFields();
         search(searchArray[0], searchArray[1]);
     }
