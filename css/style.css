@@ -269,15 +269,19 @@ button {
 }
 
 
+
 /* ADDED STYLING */
 
-
 /* search page */
+
+/* Fix for Safari. */
+input {
+    -webkit-appearance: none;
+}
 
 #movies li:hover {
     cursor: pointer;
 }
-
 
 /* description page */
 

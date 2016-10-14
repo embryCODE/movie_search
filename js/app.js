@@ -27,7 +27,7 @@ var movie_search = (function($) {
             var resultsArray = SEARCH_RESULTS.Search;
 
             for (var i = 0; i < resultsArray.length; i++) {
-                resultHTML += '<li id=array-member-' + i + '>';
+                var resultHTML = '<li id=array-member-' + i + '>';
                 resultHTML += '<div class="poster-wrap">';
 
                 /* Only show movie poster if found. */
@@ -140,7 +140,7 @@ var movie_search = (function($) {
         search(searchArray[0], searchArray[1]);
     }
 
-    
+
 
     /* Handler for submit fields. */
     $('.search-form').submit(function(e) {
