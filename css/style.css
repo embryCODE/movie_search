@@ -280,7 +280,7 @@ button {
     height: 200px;
 }
 
-#description-page {
+.description-page {
     display: none;
     margin: auto;
     color: #9d9d9d;
@@ -293,7 +293,7 @@ button {
     z-index: 1000;
 }
 
-#description-header-background {
+.description-header-background {
     background-color: #4c4c4c;
 }
 
@@ -303,16 +303,16 @@ button {
     margin: 0;
 }
 
-#back-to-search {
+.back-to-search {
     padding-top: 12px;
 }
 
-#back-to-search:hover {
+.back-to-search:hover {
     cursor: pointer;
     color: #fff;
 }
 
-#arrow {
+.arrow {
     color: #fff;
     font-size: 1.5em;
     position: relative;
@@ -345,13 +345,13 @@ button {
     border: solid #f6f7f7 10px;
 }
 
-#desc-movie-name {
+.desc-movie-name {
     color: white;
     padding: 55px 0 5px 0;
     margin: 0;
 }
 
-#desc-movie-rating {
+.desc-movie-rating {
     display: block;
     padding-bottom: 30px;
 }
@@ -363,12 +363,12 @@ button {
     margin: 20px 0 0;
 }
 
-#desc-plot {
+.desc-plot {
     padding: 10px 0 40px 0;
     margin: 0;
 }
 
-#imdb-link {
+.imdb-link {
     padding: 15px 20px;
     color: white;
     border-radius: 3px;
