@@ -78,21 +78,21 @@ var movie_search = (function($) {
                 $('.poster-div').html('<i class="material-icons desc-poster-placeholder">crop_original</i>');
             }
 
-            $('#desc-movie-name').text(movie.Title + ' (' + movie.Year + ')');
-            $('#desc-movie-rating').text('IMDB Rating: ' + movie.imdbRating);
-            $('#desc-plot').text(movie.Plot);
-            $('#imdb-link').attr("href", 'http://www.imdb.com/title/' + movie.imdbID);
+            $('.desc-movie-name').text(movie.Title + ' (' + movie.Year + ')');
+            $('.desc-movie-rating').text('IMDB Rating: ' + movie.imdbRating);
+            $('.desc-plot').text(movie.Plot);
+            $('.imdb-link').attr("href", 'http://www.imdb.com/title/' + movie.imdbID);
         };
 
         $.get(url, data, callback);
-        $('#description-page').show('slide', {
+        $('.description-page').show('slide', {
             direction: 'right'
         }, 500);
 
     }
 
     function removeDescriptionPage() {
-        $('#description-page').hide('slide', {
+        $('.description-page').hide('slide', {
             direction: 'right'
         }, 500);
         $('body').scrollTop(0);
@@ -144,7 +144,7 @@ var movie_search = (function($) {
         createDescriptionPage($(this).attr("id"));
     });
 
-    $('body').on("click", "#back-to-search", function() {
+    $('body').on("click", ".back-to-search", function() {
         removeDescriptionPage();
     });
 
