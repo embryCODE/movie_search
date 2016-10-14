@@ -66,11 +66,35 @@ var movie_search = (function($) {
         var arrayIndex = idOfClicked.match(/\d+/)[0];
         var clickedObject = SEARCH_RESULTS.Search[arrayIndex];
 
-        $('#description-page').toggle('slide', {direction: 'right' }, 500);
+        var url = 'http://www.omdbapi.com/';
+        var data = {
+            i: clickedObject.imdbID,
+            plot: 'full'
+        };
+        var callback = function(movie) {
+            if (movie.Poster !== "N/A") {
+                $('.poster-div').html('<img class="desc-poster-image" src="' + movie.Poster + '">');
+            } else {
+                $('.poster-div').html('<i class="material-icons desc-poster-placeholder">crop_original</i>');
+            }
+
+            $('#desc-movie-name').text(movie.Title + ' (' + movie.Year + ')');
+            $('#desc-movie-rating').text('IMDB Rating: ' + movie.imdbRating);
+            $('#desc-plot').text(movie.Plot);
+            $('#imdb-link').attr("href", 'http://www.imdb.com/title/' + movie.imdbID);
+        };
+
+        $.get(url, data, callback);
+        $('#description-page').toggle('slide', {
+            direction: 'right'
+        }, 500);
+
     }
 
     function removeDescriptionPage() {
-        $('#description-page').toggle('slide', {direction: 'right' }, 500);
+        $('#description-page').toggle('slide', {
+            direction: 'right'
+        }, 500);
     }
 
     /* Search OMDb. Take title and year as arguments.

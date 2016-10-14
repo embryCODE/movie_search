@@ -158,7 +158,7 @@ button {
   Layout Styles
 ==================================== */
 
-.inner, .main-content {
+.inner, .main-content, .content-container {
     width: 90%;
     max-width: 1025px;
     margin: auto;
@@ -271,6 +271,10 @@ button {
 
 /* DESCRIPTION PAGE */
 
+#movies li:hover {
+    cursor: pointer;
+}
+
 .main-content {
     position: relative;
     height: 200px;
@@ -281,7 +285,7 @@ button {
     margin: auto;
     color: #9d9d9d;
     background: #fff;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 80px;
@@ -290,14 +294,13 @@ button {
 }
 
 #description-header-background {
-    height: 190px;
     background-color: #4c4c4c;
 }
 
-#description-container {
-    width: 90%;
-    max-width: 1025px;
-    margin: auto;
+.description-container {
+    float: right;
+    width: 60%;
+    margin: 0;
 }
 
 #back-to-search {
@@ -317,11 +320,28 @@ button {
     left: -6px;
 }
 
-.desc-poster-image {
+.poster-div {
+    position: relative;
+    max-width: 300px;
+    width: 27%;
     float: left;
     margin-top: 25px;
-    margin-right: 45px;
-    max-width: 300px;
+    margin-left: 3%;
+    top: -140px;
+}
+
+.desc-poster-placeholder {
+    color: #dadada;
+    background-color: #f6f7f7;
+    font-size: 5em;
+    text-align: center;
+    padding-top: 100px;
+    width: 300px;
+    height: 400px;
+}
+
+.desc-poster-image {
+    width: 100%;
     border: solid #f6f7f7 10px;
 }
 
@@ -332,18 +352,19 @@ button {
 }
 
 #desc-movie-rating {
-    padding: 0;
-    margin: 0;
+    display: block;
+    padding-bottom: 30px;
 }
+
 
 .desc-plot-synopsis {
     color: black;
     padding: 0;
-    margin: 50px 0 0;
+    margin: 20px 0 0;
 }
 
 #desc-plot {
-    padding: 5px 0 40px 0;
+    padding: 10px 0 40px 0;
     margin: 0;
 }
 
