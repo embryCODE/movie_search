@@ -158,7 +158,7 @@ button {
   Layout Styles
 ==================================== */
 
-.inner, .main-content {
+.inner, .main-content, .content-container {
     width: 90%;
     max-width: 1025px;
     margin: auto;
@@ -266,4 +266,111 @@ button {
     .movie-list li:nth-of-type(4n+1) {
         clear: left;
     }
+}
+
+
+/* DESCRIPTION PAGE */
+
+#movies li:hover {
+    cursor: pointer;
+}
+
+.main-content {
+    position: relative;
+    height: 200px;
+}
+
+#description-page {
+    display: none;
+    margin: auto;
+    color: #9d9d9d;
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 80px;
+    left: 0px;
+    z-index: 1000;
+}
+
+#description-header-background {
+    background-color: #4c4c4c;
+}
+
+.description-container {
+    float: right;
+    width: 60%;
+    margin: 0;
+}
+
+#back-to-search {
+    padding-top: 12px;
+}
+
+#back-to-search:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+#arrow {
+    color: #fff;
+    font-size: 1.5em;
+    position: relative;
+    top: 6px;
+    left: -6px;
+}
+
+.poster-div {
+    position: relative;
+    max-width: 300px;
+    width: 27%;
+    float: left;
+    margin-top: 25px;
+    margin-left: 3%;
+    top: -140px;
+}
+
+.desc-poster-placeholder {
+    color: #dadada;
+    background-color: #f6f7f7;
+    font-size: 5em;
+    text-align: center;
+    padding-top: 100px;
+    width: 300px;
+    height: 400px;
+}
+
+.desc-poster-image {
+    width: 100%;
+    border: solid #f6f7f7 10px;
+}
+
+#desc-movie-name {
+    color: white;
+    padding: 55px 0 0;
+    margin: 0;
+}
+
+#desc-movie-rating {
+    display: block;
+    padding-bottom: 30px;
+}
+
+
+.desc-plot-synopsis {
+    color: black;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+#desc-plot {
+    padding: 10px 0 40px 0;
+    margin: 0;
+}
+
+#imdb-link {
+    padding: 15px 20px;
+    color: white;
+    border-radius: 3px;
+    background: #42D5B2;
 }
