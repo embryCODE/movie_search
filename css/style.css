@@ -271,11 +271,13 @@ button {
 
 /* ADDED STYLING */
 
+
 /* search page */
 
 #movies li:hover {
     cursor: pointer;
 }
+
 
 /* description page */
 
