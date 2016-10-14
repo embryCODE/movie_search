@@ -269,16 +269,15 @@ button {
 }
 
 
-/* DESCRIPTION PAGE */
+/* ADDED STYLING */
+
+/* search page */
 
 #movies li:hover {
     cursor: pointer;
 }
 
-.main-content {
-    position: relative;
-    height: 200px;
-}
+/* description page */
 
 .description-page {
     display: none;
@@ -297,12 +296,6 @@ button {
     background-color: #4c4c4c;
 }
 
-.description-container {
-    float: right;
-    width: 60%;
-    margin: 0;
-}
-
 .back-to-search {
     padding-top: 12px;
 }
@@ -318,6 +311,23 @@ button {
     position: relative;
     top: 6px;
     left: -6px;
+}
+
+.description-container {
+    float: right;
+    width: 60%;
+    margin: 0;
+}
+
+.desc-movie-name {
+    color: white;
+    padding: 55px 0 5px 0;
+    margin: 0;
+}
+
+.desc-movie-rating {
+    display: block;
+    padding-bottom: 30px;
 }
 
 .poster-div {
@@ -343,17 +353,6 @@ button {
 .desc-poster-image {
     width: 100%;
     border: solid #f6f7f7 10px;
-}
-
-.desc-movie-name {
-    color: white;
-    padding: 55px 0 5px 0;
-    margin: 0;
-}
-
-.desc-movie-rating {
-    display: block;
-    padding-bottom: 30px;
 }
 
 .desc-plot-synopsis {
