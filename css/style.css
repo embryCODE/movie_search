@@ -267,3 +267,101 @@ button {
         clear: left;
     }
 }
+
+
+/* DESCRIPTION PAGE */
+
+.main-content {
+    position: relative;
+    height: 200px;
+}
+
+#movies {
+    display: none;
+}
+
+#description-page {
+    /*display: none;*/
+    margin: auto;
+    color: #9d9d9d;
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 80px;
+    left: 0px;
+    z-index: 1000;
+}
+
+#description-container {
+    width: 90%;
+    max-width: 1025px;
+    margin: auto;
+}
+
+#back-to-search {
+    padding-top: 12px;
+}
+
+#back-to-search:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+#description-header-background {
+    height: 190px;
+    background-color: #4c4c4c;
+}
+
+#arrow {
+    color: #fff;
+    font-size: 1.5em;
+    position: relative;
+    top: 6px;
+    left: -6px;
+}
+
+#description-header {
+    /*display: flex;*/
+}
+
+#description-body {
+    /*display: flex;*/
+}
+
+.desc-poster-image {
+    float: left;
+    margin-top: 25px;
+    margin-right: 45px;
+    max-width: 300px;
+    border: solid #f6f7f7 10px;
+}
+
+#desc-movie-name {
+    color: white;
+    padding: 55px 0 0;
+    margin: 0;
+}
+
+#desc-movie-rating {
+    padding: 0;
+    margin: 0;
+}
+
+.desc-plot-synopsis {
+    color: black;
+    padding: 0;
+    margin: 50px 0 0;
+}
+
+#desc-plot {
+    padding: 5px 0 40px 0;
+    margin: 0;
+}
+
+#imdb-link {
+    padding: 15px 20px;
+    color: white;
+    border-radius: 3px;
+    background: #42D5B2;
+}

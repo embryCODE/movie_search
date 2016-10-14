@@ -12,17 +12,19 @@ var movie_search = (function($) {
 
     */
 
+    var SEARCH_RESULTS;
+
     /* Display search results using JSON object as argument. */
-    function displaySearchResults(searchResults) {
+    function displaySearchResults() {
         $('#movies').empty();
 
-        if (searchResults.Response === "True") {
-            var resultsArray = searchResults.Search;
+        if (SEARCH_RESULTS.Response === "True") {
+            var resultsArray = SEARCH_RESULTS.Search;
             var resultHTML = '';
 
             for (var i = 0; i < resultsArray.length; i++) {
                 resultHTML = '';
-                resultHTML += '<li>';
+                resultHTML += '<li id=array-member-' + i + '>';
                 resultHTML += '<div class="poster-wrap">';
 
                 if (resultsArray[i].Poster !== "N/A") {
@@ -57,9 +59,23 @@ var movie_search = (function($) {
         }
     }
 
+    /* Create a description page that references a member of the
+    SEARCH_RESULTS.Search array. Takes the id of the clicked item
+    as an argument and converts it to an array index. */
+    function createDescriptionPage(idOfClicked) {
+        var arrayIndex = idOfClicked.match(/\d+/)[0];
+        var clickedObject = SEARCH_RESULTS.Search[arrayIndex];
+
+        $('#description-page').toggle('slide', {direction: 'right' }, 500);
+    }
+
+    function removeDescriptionPage() {
+        $('#description-page').toggle('slide', {direction: 'right' }, 500);
+    }
+
     /* Search OMDb. Take title and year as arguments.
-    On success, call displaySearchResults() with JSON object from
-    callback as argument. */
+    On success, assign returned JSON object to SEARCH_RESULTS and
+    call displaySearchResults(). */
     function search(searchTitle, searchYear) {
         var url = 'http://www.omdbapi.com/';
         var data = {
@@ -67,7 +83,8 @@ var movie_search = (function($) {
             y: searchYear
         };
         var callback = function(data) {
-            displaySearchResults(data);
+            SEARCH_RESULTS = data;
+            displaySearchResults();
         };
 
         $.get(url, data, callback);
@@ -93,6 +110,16 @@ var movie_search = (function($) {
     $('.search-form').submit(function(e) {
         e.preventDefault();
         performSearch();
+    });
+
+    /* Handler for movie li's. Call createDescriptionPage, passing in
+    the clicked item's id as an argument. */
+    $('#movies').on("click", "li", function() {
+        createDescriptionPage($(this).attr("id"));
+    });
+
+    $('body').on("click", "#back-to-search", function() {
+        removeDescriptionPage();
     });
 
 })(jQuery);
