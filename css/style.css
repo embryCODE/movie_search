@@ -274,6 +274,10 @@ button {
 
 /* search page */
 
+.main-title a {
+    color: inherit;
+}
+
 /* Fix for Safari. */
 input {
     -webkit-appearance: none;
