@@ -305,6 +305,7 @@ input {
 .loading-desc p {
     display: inline-block;
     padding: 15px 20px;
+    border-radius: 2px;
     background: white;
     color: #4c4c4c;
 }
